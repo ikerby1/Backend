@@ -9,6 +9,7 @@ const User = require('./models/User');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(express.static('Frontend'));
 
 const JWT_SECRET = process.env.JWT_SECRET || "MY_SECRET_KEY";
 
