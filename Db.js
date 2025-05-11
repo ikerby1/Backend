@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
-// Use the MONGO_URI environment variable if provided (e.g. in Glitch)
-// or default to a local MongoDB instance.
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/courseapp', {
+// Use the MONGO_URI environment variable if provided, otherwise use the provided connection string.
+
+const dbUri = process.env.MONGO_URI || "mongodb+srv://sdev255ik:mongoose80@cluster0.ogoxavs.mongodb.net/courseapp?retryWrites=true&w=majority";
+
+mongoose.connect(dbUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -16,3 +18,4 @@ mongoose.connection.on('error', (err) => {
 });
 
 module.exports = mongoose;
+

@@ -1,4 +1,5 @@
 const express = require('express');
+const router = express.Router();
 const bodyParser = require('body-parser');
 const jwt = require('jwt-simple');
 const bcrypt = require('bcryptjs');
