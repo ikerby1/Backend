@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 
 const dbUri = process.env.MONGO_URI || "mongodb+srv://sdev255ik:mongoose80@cluster0.ogoxavs.mongodb.net/courseapp?retryWrites=true&w=majority";
 
+//Log the connection attempt
+console.log("Attempting to connect to MongoDB using URI:", dbUri);
+
 mongoose.connect(dbUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
